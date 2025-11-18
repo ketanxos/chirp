@@ -1,4 +1,7 @@
+import 'package:chirp/modules/nearby/nearbyEvent.dart';
+import 'package:chirp/modules/nearby/nearbyLogic.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'modules/about.dart';
 import 'modules/calls.dart';
 import 'modules/chats.dart';
@@ -15,16 +18,19 @@ class MyApp extends StatelessWidget {
   const MyApp({super.key});
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Chirp',
-      theme: ThemeData(primarySwatch: Colors.blue),
-      home: const HomePage(),
-      routes: {
-        '/profile': (context) => const ProfilePage(),
-        '/settings': (context) => const SettingsPage(),
-        '/about': (context) => const AboutPage(),
-      },
+    return ChangeNotifierProvider(
+      create: (context) => NearbyLogic(),
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'Chirp',
+        theme: ThemeData(primarySwatch: Colors.blue),
+        home: const NearbyEvents(child: HomePage()),
+        routes: {
+          '/profile': (context) => const ProfilePage(),
+          '/settings': (context) => const SettingsPage(),
+          '/about': (context) => const AboutPage(),
+        },
+      ),
     );
   }
 }
