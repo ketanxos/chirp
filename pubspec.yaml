@@ -9,19 +9,19 @@ platforms:
   ios:
 
 environment:
-  sdk: ^3.9.2
+  sdk: ^3.10.0
 
 dependencies:
   flutter:
     sdk: flutter
   provider: ^6.1.5+1
+  permission_handler: ^12.0.1
+  flutter_blue_plus: ^2.0.2
+  wifi_iot: ^0.3.19+2
+  nsd: ^4.0.3
+  flutter_webrtc: ^1.2.0
   image_picker: ^1.2.1
   cupertino_icons: ^1.0.8
-  flutter_blue_plus: ^2.0.2
-  permission_handler: ^12.0.1
-  wifi_iot: ^0.3.19+2
-  flutter_webrtc: ^1.2.0
-  nsd: ^4.0.3
 
 dev_dependencies:
   flutter_test:
